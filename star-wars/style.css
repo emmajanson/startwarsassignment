@@ -1,0 +1,461 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+}
+
+a {
+  transition: 0.5s;
+  text-decoration: none;
+  color: white;
+}
+
+span {
+  color: #DB262C;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 5px solid #DB262C;
+  position: fixed;
+  width: 100%;
+  padding: 40px;
+  height: 40px;
+  z-index: 1;
+}
+
+.header h1 {
+  margin-left: -1000px;
+  transition: 0.5s;
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  from {
+    margin-left: -1000px;
+  }
+
+  to {
+    margin-left: 0;
+  }
+}
+
+.header h1:hover {
+  color: #DB262C;
+  transform: scale(1.01);
+}
+
+.header h1:hover span {
+  color: white;
+}
+
+.header span {
+  color: #DB262C;
+  transition: 0.5s;
+}
+
+.link-wrapper a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+.link-wrapper a:hover {
+  color: #DB262C;
+}
+
+@media screen and (max-width: 800px) {
+  .full-logo,
+  .link-wrapper {
+    display: none;
+  }
+
+  .header {
+    padding-right: 10px;
+    padding-left: 20px;
+    padding-left: 5;
+  }
+
+  .menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+
+  .menu-btn-burger {
+    width: 40px;
+    height: 4px;
+    background-color: black;
+    transition: 0.5s;
+  }
+
+  .menu-btn-burger::before,
+  .menu-btn-burger::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: black;
+    transition: 0.5s;
+  }
+
+  .menu-btn-burger::before {
+    transform: translateY(-10px);
+  }
+
+  .menu-btn-burger::after {
+    transform: translateY(10px);
+  }
+
+  .menu-btn.open .menu-btn-burger {
+    transform: rotate(180deg);
+    background-color: transparent;
+  }
+
+  .menu-btn.open .menu-btn-burger::before {
+    transform: rotate(45deg);
+  }
+
+  .menu-btn.open .menu-btn-burger::after {
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu {
+    height: calc(100vh - 80px);
+    width: 100%;
+    background-color: #DB262C;
+    position: fixed;
+    right: -100%;
+    margin-top: 80px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+
+  .mobile-link-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .mobile-link {
+    margin: 10px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .mobile-logo,
+  .menu-btn,
+  .mobile-menu {
+    display: none;
+  }
+}
+
+#hero-section {
+  position: relative;
+  width: 100%;
+}
+
+#hero-section img {
+  width: 100%;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+  object-fit: cover;
+}
+
+.hero-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-overlay h1 {
+  color: white;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero-image-overlay a {
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  padding: 10px 20px;
+  border: 2px solid white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.hero-image-overlay a:hover {
+  background-color: white;
+  color: #DB262C;
+  animation-name: shake;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(2deg);
+  }
+
+  50% {
+    transform: rotate(-2deg);
+  }
+
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+.section {
+  min-height: 60vh;
+  margin: 40px;
+}
+
+#about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  width: 300px;
+  margin: 2%;
+  background-color: white;
+  border-radius: 10px;
+  height: 100%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 800px) {
+  .about-card {
+    min-height: 40px;
+    height: unset;
+  }
+}
+
+.about-card:hover {
+  transform: scale(1.01);
+}
+
+.about-card p {
+  padding: 20px;
+  height: 20vh;
+  overflow: auto;
+}
+
+.about-card-header-wrapper {
+  width: 100%;
+  background-color: #DB262C;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.about-card-header-wrapper i {
+  border-radius: 50%;
+  background-color: black;
+  padding: 15px;
+  font-size: 20px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+    margin-top: 30px;
+}
+
+#about-modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-modal {
+  width: 50%;
+  height: 90vh;
+  background-color: white;
+  border-radius: 10px;
+  overflow: scroll;
+}
+
+.modal-header {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    color: #DB262C;
+}
+
+.modal-header span {
+  cursor: pointer;
+}
+
+h2{
+  text-align: center;
+}
+
+#about-modal-content {
+    padding: 10px;
+}
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+    .lds-roller div {
+        animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        transform-origin: 40px 40px;
+    }
+
+        .lds-roller div:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #DB262C;
+            margin: -4px 0 0 -4px;
+        }
+
+        .lds-roller div:nth-child(1) {
+            animation-delay: -0.036s;
+        }
+
+            .lds-roller div:nth-child(1):after {
+                top: 63px;
+                left: 63px;
+            }
+
+        .lds-roller div:nth-child(2) {
+            animation-delay: -0.072s;
+        }
+
+            .lds-roller div:nth-child(2):after {
+                top: 68px;
+                left: 56px;
+            }
+
+        .lds-roller div:nth-child(3) {
+            animation-delay: -0.108s;
+        }
+
+            .lds-roller div:nth-child(3):after {
+                top: 71px;
+                left: 48px;
+            }
+
+        .lds-roller div:nth-child(4) {
+            animation-delay: -0.144s;
+        }
+
+            .lds-roller div:nth-child(4):after {
+                top: 72px;
+                left: 40px;
+            }
+
+        .lds-roller div:nth-child(5) {
+            animation-delay: -0.18s;
+        }
+
+            .lds-roller div:nth-child(5):after {
+                top: 71px;
+                left: 32px;
+            }
+
+        .lds-roller div:nth-child(6) {
+            animation-delay: -0.216s;
+        }
+
+            .lds-roller div:nth-child(6):after {
+                top: 68px;
+                left: 24px;
+            }
+
+        .lds-roller div:nth-child(7) {
+            animation-delay: -0.252s;
+        }
+
+            .lds-roller div:nth-child(7):after {
+                top: 63px;
+                left: 17px;
+            }
+
+        .lds-roller div:nth-child(8) {
+            animation-delay: -0.288s;
+        }
+
+            .lds-roller div:nth-child(8):after {
+                top: 56px;
+                left: 12px;
+            }
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

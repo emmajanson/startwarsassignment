@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Star Wars Assignment">
+    <title>Star Wars API assignment</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/89f9d9bd5e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="about-modal-wrapper">
+        <div class="about-modal">
+            <div class="modal-header">
+                <h2 id="titles"></h2>
+                <span onclick="closeAboutModal()"><i class="fa fa-times"></i></span>
+            </div>
+            <div id="about-modal-content">
+                <h2>Characters</h2>
+                <p id="characters"></p>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <a class="full-logo" href="#hero-section"><h1><span>S</span>tar <span>W</span>ars <span>A</span>signment</h1></a>
+        <a class="mobile-logo" href="#hero-section"><h1><span>SW</span></h1></a>
+        <nav class="link-wrapper">
+            <a href="#hero-section">Home</a>
+        </nav>
+        <div class="menu-btn">
+            <div class="menu-btn-burger"></div>
+        </div>
+    </header>
+    <div class="mobile-menu">
+        <nav class="mobile-link-wrapper">
+            <a class="mobile-link" href="#hero-section">Home</a>
+        </nav>
+    </div>
+    <section id="hero-section">
+        <img alt="starwars" src="./media/starwars.jpg">
+        <div class="hero-image-overlay">
+            <h1>Star Wars Movies & Characters</h1>
+            <a onclick="main()" href="#about-section">Click here to show movies</a>
+        </div>
+    </section>
+    <section id="about-section" class="section">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </section>
+        <footer id="footer-section">
+            <p>	&copy; Emma Janson 2021</p>
+        </footer>
+        <script src="./app.js">
+        </script>
+</body>
+</html>
